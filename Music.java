@@ -31,5 +31,9 @@ public class Music{
 		flag = false;
 		notify();
 	}
+
+	public void lastTone(String song){
+		player.play(song);
+	}
 	
 }

@@ -1,11 +1,11 @@
 public class Thread1 implements Runnable{
 
-	Music m;
+	Music block;
 
 	String[] songs = {"do.wav", "mi.wav", "sol.wav", "si.wav"};
 
-	public Thread1(Music m1){
-		m = m1;
+	public Thread1(Music block){
+		this.block = block;
 		new Thread(this).start();
 	}
 
@@ -13,10 +13,16 @@ public class Thread1 implements Runnable{
 	public void run(){
 
 		for (int i=0; i<songs.length; i++){
-			m.firstTone(songs[i]);
+			block.firstTone(songs[i]);
 		}
 
-		//player.play("do-octave.wav");
+		//try{
+		//	Thread.sleep(200);
+		//} catch (InterruptedException e){
+		//	e.printStackTrace();
+		//}
+
+		block.lastTone("do-octave.wav");
 		
 
 	}
